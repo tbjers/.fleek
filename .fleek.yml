@@ -11,7 +11,7 @@ git:
   autocommit: false
   autopull: true
   autopush: false
-  enabled: true
+  enabled: false
 min_version: 0.8.4
 name: Fleek Configuration
 packages:
