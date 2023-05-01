@@ -76,6 +76,7 @@
     commit = {
       gpgSign = true;
     };
+    # TODO: improve this hack (if possible)
     gpg = lib.mkForce {
       program = lib.mkForce "${pkgs.gnupg}/bin/gpg2";
     };
