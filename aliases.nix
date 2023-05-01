@@ -5,6 +5,8 @@
     
     czg = "chezmoi git";
     
+    db = "distrobox";
+    
     fleeks = "cd ~/.local/share/fleek";
     
     g = "git";

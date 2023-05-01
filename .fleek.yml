@@ -1,6 +1,7 @@
 aliases:
   cz: chezmoi
   czg: chezmoi git
+  db: distrobox
   fleeks: cd ~/.local/share/fleek
   g: git
 bling: high
@@ -15,16 +16,16 @@ min_version: 0.8.4
 name: Fleek Configuration
 packages:
   - cascadia-code
+  - distrobox
   - fd
   - go_1_20
   - golangci-lint
   - helix
   - nodejs-18_x
+  - opensc
+  - pre-commit
   - python3Full
   - ruby_3_1
-  - opensc
-  - distrobox
-  - pre-commit
 paths:
   - $HOME/bin
   - $HOME/.local/bin

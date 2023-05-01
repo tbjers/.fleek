@@ -20,16 +20,16 @@
   home.packages = [
     # user selected packages
     pkgs.cascadia-code
+    pkgs.distrobox
     pkgs.fd
     pkgs.go_1_20
     pkgs.golangci-lint
     pkgs.helix
     pkgs.nodejs-18_x
+    pkgs.opensc
+    pkgs.pre-commit
     pkgs.python3Full
     pkgs.ruby_3_1
-    pkgs.opensc
-    pkgs.distrobox
-    pkgs.pre-commit
     # Fleek Bling
     pkgs.git
     pkgs.htop
