@@ -2,7 +2,7 @@
   # FEEL FREE TO EDIT: This file is NOT managed by fleek.
   # configs mentioned here must be listed in ~/fleek.yml #programs array or you will get errors
 
-  virtualization = {
+  virtualisation = {
     podman = {
       enable = true;
       dockerCompat = true;
