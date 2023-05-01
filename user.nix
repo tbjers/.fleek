@@ -2,6 +2,14 @@
   # FEEL FREE TO EDIT: This file is NOT managed by fleek.
   # configs mentioned here must be listed in ~/fleek.yml #programs array or you will get errors
 
+  virtualization = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.dnsname.enable = true;
+    };
+  };
+
   home.sessionVariables = {
     FLEEK_MANAGED = "1";
     EDITOR = "nano";
