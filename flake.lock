@@ -1,0 +1,83 @@
+{
+  "nodes": {
+    "fleek": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1682534240,
+        "narHash": "sha256-3cmXumBmvQbpiTxxo8BOuY+qzS38aJRaYkrZM97HGCQ=",
+        "owner": "ublue-os",
+        "repo": "fleek",
+        "rev": "5871eabfdfef7debf33b3a860089892968818c19",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ublue-os",
+        "repo": "fleek",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1682779989,
+        "narHash": "sha256-H8AjcIBYFYrlRobYJ+n1B+ZJ6TsaaeZpuLn4iRqVvr4=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "3144311f31194b537808ae6848f86f3dbf977d59",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1681154110,
+        "narHash": "sha256-OQwWzlzAY1dCqgSsgZzsPIOGmX4pBGaoXOy0rSl4b5Y=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "115a96e2ac1e92937cd47c30e073e16dcaaf6247",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1682692304,
+        "narHash": "sha256-9/lyXN2BpHw+1xE+D2ySBSLMCHWqiWu5tPHBMRDib8M=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "937a9d1ee7b1351d8c55fff6611a8edf6e7c1c37",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "fleek": "fleek",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs_2"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
