@@ -30,6 +30,7 @@
     pkgs.pre-commit
     pkgs.python3Full
     pkgs.ruby_3_1
+    pkgs.podman
     # Fleek Bling
     pkgs.git
     pkgs.htop

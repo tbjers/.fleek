@@ -1,49 +1,50 @@
 aliases:
-  cz: chezmoi
-  czg: chezmoi git
-  db: distrobox
-  fleeks: cd ~/.local/share/fleek
-  g: git
+    cz: chezmoi
+    czg: chezmoi git
+    db: distrobox
+    fleeks: cd ~/.local/share/fleek
+    g: git
 bling: high
 ejected: false
 flakedir: .local/share/fleek
 git:
-  autocommit: true
-  autopull: true
-  autopush: true
-  enabled: true
+    autocommit: true
+    autopull: true
+    autopush: true
+    enabled: true
 min_version: 0.8.4
 name: Fleek Configuration
 packages:
-  - cascadia-code
-  - distrobox
-  - fd
-  - go_1_20
-  - golangci-lint
-  - helix
-  - nodejs-18_x
-  - opensc
-  - pre-commit
-  - python3Full
-  - ruby_3_1
+    - cascadia-code
+    - distrobox
+    - fd
+    - go_1_20
+    - golangci-lint
+    - helix
+    - nodejs-18_x
+    - opensc
+    - pre-commit
+    - python3Full
+    - ruby_3_1
+    - podman
 paths:
-  - $HOME/bin
-  - $HOME/.local/bin
-  - $HOME/.config/emacs/bin
+    - $HOME/bin
+    - $HOME/.local/bin
+    - $HOME/.config/emacs/bin
 programs:
-  - dircolors
-  - emacs
-  - gpg
+    - dircolors
+    - emacs
+    - gpg
 shell: bash
 systems:
-  - arch: x86_64
-    hostname: limiting-factor
-    os: linux
-    username: tbjers
+    - arch: x86_64
+      hostname: limiting-factor
+      os: linux
+      username: tbjers
 unfree: true
 users:
-  - email: torgny@bjers.org
-    name: Torgny Bjers
-    ssh_private_key_file: ""
-    ssh_public_key_file: ""
-    username: tbjers
+    - email: torgny@bjers.org
+      name: Torgny Bjers
+      ssh_private_key_file: ""
+      ssh_public_key_file: ""
+      username: tbjers
