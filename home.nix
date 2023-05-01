@@ -29,6 +29,7 @@
     pkgs.ruby_3_1
     pkgs.opensc
     pkgs.distrobox
+    pkgs.pre-commit
     # Fleek Bling
     pkgs.git
     pkgs.htop
