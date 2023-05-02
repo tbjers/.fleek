@@ -13,18 +13,21 @@
     # Fleek
     fleek.url = "github:ublue-os/fleek";
 
+    # Overlays
+    
+
   };
 
-  outputs = { nixpkgs, home-manager, fleek, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, fleek, ... }@inputs: {
 
     # Available through 'home-manager --flake .#your-username@your-hostname'
+    
     homeConfigurations = {
     
       "tbjers@limiting-factor" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
-
-        modules = [ 
+        modules = [
           ./home.nix 
           ./path.nix
           ./shell.nix
@@ -35,11 +38,12 @@
           ./limiting-factor/limiting-factor.nix
           ./limiting-factor/user.nix
           # self-manage fleek
-          {
+          ({
+           nixpkgs.overlays = [];
            home.packages = [
             fleek.packages.x86_64-linux.default
           ];
-          }
+          })
 
         ];
       };
