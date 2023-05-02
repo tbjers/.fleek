@@ -1,4 +1,4 @@
-{ pkgs, misc, lib, config, ... }:{
+{ pkgs, misc, lib, config, ... }: {
   # FEEL FREE TO EDIT: This file is NOT managed by fleek.
   # configs mentioned here must be listed in ~/fleek.yml #programs array or you will get errors
 
@@ -61,40 +61,20 @@
   };
 
   programs.git.diff-so-fancy.enable = true;
-  programs.git.diff-so-fancy.pagerOpts = [
-    "--tabs=4"
-    "-RFX"
-  ];
+  programs.git.diff-so-fancy.pagerOpts = [ "--tabs=4" "-RFX" ];
 
   programs.git.extraConfig = {
-    advice = {
-      detachedHead = false;
-    };
-    init = {
-      defaultBranch = "main";
-    };
-    commit = {
-      gpgSign = true;
-    };
-    push = {
-      autoSetupRemote = true;
-    };
+    advice = { detachedHead = false; };
+    init = { defaultBranch = "main"; };
+    commit = { gpgSign = true; };
+    push = { autoSetupRemote = true; };
     # TODO: improve this hack (if possible)
-    gpg = lib.mkForce {
-      program = lib.mkForce "${pkgs.gnupg}/bin/gpg2";
-    };
+    gpg = lib.mkForce { program = lib.mkForce "${pkgs.gnupg}/bin/gpg2"; };
     tag = {
       forceSignAnnotated = true;
       gpgSign = true;
     };
-    credential = {
-      credentialStore = "gpg";
-    };
-    url = {
-      "ssh://git@github.com" = {
-        insteadOf = "https://github.com";
-      };
-    };
+    credential = { credentialStore = "gpg"; };
   };
 
   programs.git.signing = lib.mkForce {
@@ -102,7 +82,6 @@
     gpgPath = "${pkgs.gnupg}/bin/gpg2";
     signByDefault = true;
   };
-
 
   programs.gpg.homedir = "${config.home.homeDirectory}/.gnupg";
   programs.gpg.mutableKeys = true;
@@ -134,9 +113,7 @@
   services.gpg-agent.defaultCacheTtl = 3600;
   services.gpg-agent.pinentryFlavor = "curses";
   services.gpg-agent.maxCacheTtl = 7200;
-  services.gpg-agent.sshKeys = [
-    "1EF33AD194BF3CADBC115F751CC2EACF4E075BAD"
-  ];
+  services.gpg-agent.sshKeys = [ "1EF33AD194BF3CADBC115F751CC2EACF4E075BAD" ];
 
   # You know why this is here, yes, YOU.
   home.shellAliases = { vim = "nvim"; };
@@ -144,14 +121,14 @@
   home.activation = {
     getDoomEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       $DRY_RUN_CMD export GIT_SSH=${pkgs.openssh}/bin/ssh
-      $DRY_RUN_CMD ${pkgs.git}/bin/git -C ~/.config/emacs pull || \
+      $DRY_RUN_CMD ${pkgs.git}/bin/git -C ~/.config/emacs status || \
         $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 \
         https://github.com/doomemacs/doomemacs \
         ~/.config/emacs
     '';
     getAstroNvim = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       $DRY_RUN_CMD export GIT_SSH=${pkgs.openssh}/bin/ssh
-      $DRY_RUN_CMD ${pkgs.git}/bin/git -C ~/.config/nvim pull || \
+      $DRY_RUN_CMD ${pkgs.git}/bin/git -C ~/.config/nvim status || \
         $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 \
         https://github.com/AstroNvim/AstroNvim \
         ~/.config/nvim
