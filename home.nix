@@ -37,6 +37,7 @@
     pkgs.ruby_3_1
     pkgs.shellcheck
     pkgs.shfmt
+    pkgs.chezmoi
     # Fleek Bling
     pkgs.git
     pkgs.htop
