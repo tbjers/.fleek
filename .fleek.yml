@@ -4,6 +4,7 @@ aliases:
   db: distrobox
   fleeks: cd ~/.local/share/fleek
   g: git
+  nah: git reset --hard; git clean -df;
 bling: high
 ejected: false
 flakedir: .local/share/fleek
@@ -35,6 +36,16 @@ packages:
   - ruby_3_1
   - shellcheck
   - shfmt
+  - terraform
+  - terraform-docs
+  - terraform-providers.ansible
+  - terraform-providers.cloudflare
+  - terraform-providers.consul
+  - terraform-providers.digitalocean
+  - terraform-providers.helm
+  - terraform-providers.kubernetes
+  - terraform-providers.minio
+  - terraform-providers.random
 paths:
   - $HOME/bin
   - $HOME/.local/bin

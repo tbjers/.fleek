@@ -20,6 +20,7 @@
   home.packages = [
     # user selected packages
     pkgs.cascadia-code
+    pkgs.chezmoi
     pkgs.fd
     pkgs.go_1_20
     pkgs.golangci-lint
@@ -37,7 +38,16 @@
     pkgs.ruby_3_1
     pkgs.shellcheck
     pkgs.shfmt
-    pkgs.chezmoi
+    pkgs.terraform
+    pkgs.terraform-providers.ansible
+    pkgs.terraform-providers.random
+    pkgs.terraform-providers.digitalocean
+    pkgs.terraform-docs
+    pkgs.terraform-providers.kubernetes
+    pkgs.terraform-providers.cloudflare
+    pkgs.terraform-providers.helm
+    pkgs.terraform-providers.minio
+    pkgs.terraform-providers.consul
     # Fleek Bling
     pkgs.git
     pkgs.htop
