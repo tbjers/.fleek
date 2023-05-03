@@ -31,6 +31,7 @@
     pkgs.ranger
     pkgs.shellcheck
     pkgs.shfmt
+    pkgs.asdf-vm
     # Fleek Bling
     pkgs.git
     pkgs.htop

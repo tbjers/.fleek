@@ -30,6 +30,7 @@ packages:
     - ranger
     - shellcheck
     - shfmt
+    - asdf-vm
 paths:
     - $HOME/bin
     - $HOME/.local/bin
