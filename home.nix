@@ -48,6 +48,8 @@
     pkgs.terraform-providers.kubernetes
     pkgs.terraform-providers.minio
     pkgs.terraform-providers.random
+    pkgs.tfsec
+    pkgs.tflint
     # Fleek Bling
     pkgs.git
     pkgs.htop
