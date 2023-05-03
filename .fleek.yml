@@ -1,72 +1,53 @@
 aliases:
-  cz: chezmoi
-  czg: chezmoi git
-  db: distrobox
-  fleeks: cd ~/.local/share/fleek
-  g: git
-  nah: git reset --hard; git clean -df;
-  tf: terraform
+    cz: chezmoi
+    czg: chezmoi git
+    db: distrobox
+    fleeks: cd ~/.local/share/fleek
+    g: git
+    nah: git reset --hard; git clean -df;
+    tf: terraform
 bling: high
 ejected: false
 flakedir: .local/share/fleek
 git:
-  autocommit: false
-  autopull: false
-  autopush: false
-  enabled: false
+    autocommit: false
+    autopull: false
+    autopush: false
+    enabled: false
 min_version: 0.8.4
 name: Fleek Configuration
 overlays: {}
 packages:
-  - cascadia-code
-  - chezmoi
-  - fd
-  - go_1_20
-  - golangci-lint
-  - gopls
-  - gotests
-  - helix
-  - mc
-  - nixfmt
-  - nodejs-18_x
-  - opensc
-  - podman
-  - pre-commit
-  - python3Full
-  - ranger
-  - ruby_3_1
-  - shellcheck
-  - shfmt
-  - terraform
-  - terraform-docs
-  - terraform-providers.ansible
-  - terraform-providers.cloudflare
-  - terraform-providers.consul
-  - terraform-providers.digitalocean
-  - terraform-providers.helm
-  - terraform-providers.kubernetes
-  - terraform-providers.minio
-  - terraform-providers.random
-  - tflint
-  - tfsec
+    - cascadia-code
+    - chezmoi
+    - fd
+    - helix
+    - mc
+    - nixfmt
+    - nodejs-18_x
+    - pre-commit
+    - python3
+    - ranger
+    - shellcheck
+    - shfmt
 paths:
-  - $HOME/bin
-  - $HOME/.local/bin
-  - $HOME/.config/emacs/bin
+    - $HOME/bin
+    - $HOME/.local/bin
+    - $HOME/.config/emacs/bin
 programs:
-  - dircolors
-  - emacs
-  - gpg
+    - dircolors
+    - emacs
+    - gpg
 shell: bash
 systems:
-  - arch: x86_64
-    hostname: limiting-factor
-    os: linux
-    username: tbjers
+    - arch: x86_64
+      hostname: limiting-factor
+      os: linux
+      username: tbjers
 unfree: true
 users:
-  - email: torgny@bjers.org
-    name: Torgny Bjers
-    ssh_private_key_file: ""
-    ssh_public_key_file: ""
-    username: tbjers
+    - email: torgny@bjers.org
+      name: Torgny Bjers
+      ssh_private_key_file: ""
+      ssh_public_key_file: ""
+      username: tbjers

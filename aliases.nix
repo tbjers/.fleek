@@ -13,6 +13,8 @@
     
     nah = "git reset --hard; git clean -df;";
     
+    tf = "terraform";
+    
     # bat --plain for unformatted cat
     catp = "bat -P";
     

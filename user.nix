@@ -102,10 +102,6 @@
     throw-keyids = true;
   };
 
-  programs.ssh.extraConfig = ''
-    Match host * exec "gpg-connect-agent UPDATESTARTUPTTY /bye"
-  '';
-
   services.gpg-agent.enable = true;
   services.gpg-agent.verbose = true;
   services.gpg-agent.enableExtraSocket = true;

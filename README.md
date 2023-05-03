@@ -30,3 +30,5 @@ Your actual aliases are listed below:
     g = "git";
 
     nah = "git reset --hard; git clean -df;";
+
+    tf = "terraform";

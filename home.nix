@@ -22,34 +22,15 @@
     pkgs.cascadia-code
     pkgs.chezmoi
     pkgs.fd
-    pkgs.go_1_20
-    pkgs.golangci-lint
-    pkgs.gopls
-    pkgs.gotests
     pkgs.helix
     pkgs.mc
     pkgs.nixfmt
     pkgs.nodejs-18_x
-    pkgs.opensc
-    pkgs.podman
     pkgs.pre-commit
-    pkgs.python3Full
+    pkgs.python3
     pkgs.ranger
-    pkgs.ruby_3_1
     pkgs.shellcheck
     pkgs.shfmt
-    pkgs.terraform
-    pkgs.terraform-docs
-    pkgs.terraform-providers.ansible
-    pkgs.terraform-providers.cloudflare
-    pkgs.terraform-providers.consul
-    pkgs.terraform-providers.digitalocean
-    pkgs.terraform-providers.helm
-    pkgs.terraform-providers.kubernetes
-    pkgs.terraform-providers.minio
-    pkgs.terraform-providers.random
-    pkgs.tfsec
-    pkgs.tflint
     # Fleek Bling
     pkgs.git
     pkgs.htop
