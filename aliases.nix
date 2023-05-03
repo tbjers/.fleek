@@ -11,6 +11,8 @@
     
     g = "git";
     
+    nah = "git reset --hard; git clean -df;";
+    
     # bat --plain for unformatted cat
     catp = "bat -P";
     

@@ -39,15 +39,15 @@
     pkgs.shellcheck
     pkgs.shfmt
     pkgs.terraform
-    pkgs.terraform-providers.ansible
-    pkgs.terraform-providers.random
-    pkgs.terraform-providers.digitalocean
     pkgs.terraform-docs
-    pkgs.terraform-providers.kubernetes
+    pkgs.terraform-providers.ansible
     pkgs.terraform-providers.cloudflare
-    pkgs.terraform-providers.helm
-    pkgs.terraform-providers.minio
     pkgs.terraform-providers.consul
+    pkgs.terraform-providers.digitalocean
+    pkgs.terraform-providers.helm
+    pkgs.terraform-providers.kubernetes
+    pkgs.terraform-providers.minio
+    pkgs.terraform-providers.random
     # Fleek Bling
     pkgs.git
     pkgs.htop

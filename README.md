@@ -28,3 +28,5 @@ Your actual aliases are listed below:
     fleeks = "cd ~/.local/share/fleek";
 
     g = "git";
+
+    nah = "git reset --hard; git clean -df;";
