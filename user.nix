@@ -118,16 +118,16 @@
     getDoomEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       $DRY_RUN_CMD export GIT_SSH=${pkgs.openssh}/bin/ssh
       $DRY_RUN_CMD ${pkgs.git}/bin/git -C ~/.config/emacs status || \
-        $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 \
-        https://github.com/doomemacs/doomemacs \
-        ~/.config/emacs
+          $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 \
+          https://github.com/doomemacs/doomemacs \
+          ~/.config/emacs
     '';
     getAstroNvim = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       $DRY_RUN_CMD export GIT_SSH=${pkgs.openssh}/bin/ssh
       $DRY_RUN_CMD ${pkgs.git}/bin/git -C ~/.config/nvim status || \
-        $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 \
-        https://github.com/AstroNvim/AstroNvim \
-        ~/.config/nvim
+          $DRY_RUN_CMD ${pkgs.git}/bin/git clone --depth 1 \
+          https://github.com/AstroNvim/AstroNvim \
+          ~/.config/nvim
     '';
   };
 }
