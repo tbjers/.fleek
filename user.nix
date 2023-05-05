@@ -12,6 +12,8 @@
   programs.bash.bashrcExtra = ''
     export GPG_TTY="$(tty)"
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    gpg-connect-agent killagent /bye
+    gpg-connect-agent updatestartuptty /bye
     . ${pkgs.asdf-vm}/share/bash-completion/completions/asdf.bash
     . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
   '';
