@@ -130,13 +130,16 @@
   services.gpg-agent.enable = true;
   services.gpg-agent.verbose = true;
   services.gpg-agent.enableExtraSocket = true;
+  services.gpg-agent.enableScDaemon = true;
   services.gpg-agent.enableSshSupport = true;
+  services.gpg-agent.grabKeyboardAndMouse = true;
   services.gpg-agent.defaultCacheTtl = 3600;
   services.gpg-agent.pinentryFlavor = "curses";
   services.gpg-agent.maxCacheTtl = 7200;
   services.gpg-agent.sshKeys = [ "1EF33AD194BF3CADBC115F751CC2EACF4E075BAD" ];
   services.gpg-agent.extraConfig = ''
     allow-emacs-pinentry
+    allow-loopback-pinentry
   '';
 
   home.activation = {

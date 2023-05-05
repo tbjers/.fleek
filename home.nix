@@ -22,16 +22,14 @@
     pkgs.cascadia-code
     pkgs.chezmoi
     pkgs.fd
-    pkgs.helix
     pkgs.mc
     pkgs.nixfmt
     pkgs.nodejs-18_x
     pkgs.pre-commit
     pkgs.python3
     pkgs.ranger
-    pkgs.shellcheck
-    pkgs.shfmt
     pkgs.asdf-vm
+    pkgs.xclip
     # Fleek Bling
     pkgs.git
     pkgs.htop

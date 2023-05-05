@@ -28,6 +28,7 @@ packages:
     - python3
     - ranger
     - asdf-vm
+    - xclip
 paths:
     - $HOME/bin
     - $HOME/.local/bin
