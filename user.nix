@@ -137,10 +137,6 @@
   services.gpg-agent.pinentryFlavor = "curses";
   services.gpg-agent.maxCacheTtl = 7200;
   services.gpg-agent.sshKeys = [ "1EF33AD194BF3CADBC115F751CC2EACF4E075BAD" ];
-  services.gpg-agent.extraConfig = ''
-    allow-emacs-pinentry
-    allow-loopback-pinentry
-  '';
 
   home.activation = {
     getDoomEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
