@@ -21,15 +21,12 @@ packages:
     - cascadia-code
     - chezmoi
     - fd
-    - helix
     - mc
     - nixfmt
     - nodejs-18_x
     - pre-commit
     - python3
     - ranger
-    - shellcheck
-    - shfmt
     - asdf-vm
 paths:
     - $HOME/bin
