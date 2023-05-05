@@ -8,10 +8,12 @@
   };
 
   programs.bash.enable = true;
+  programs.bash.enableCompletion = true;
   programs.bash.bashrcExtra = ''
     export GPG_TTY="$(tty)"
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-    gpgconf --launch gpg-agent
+    . ${pkgs.asdf-vm}/share/bash-completion/completions/asdf.bash
+    . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
   '';
 
   # For information about available direnv options,
