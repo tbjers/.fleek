@@ -84,16 +84,17 @@
 
   programs.git.extraConfig = {
     advice = { detachedHead = false; };
-    init = { defaultBranch = "main"; };
     commit = { gpgSign = true; };
+    credential = { credentialStore = "gpg"; };
+    diff = { gpg = { textconv = "gpg --no-tty --decrypt"; }; };
+    gpg = lib.mkForce { program = lib.mkForce "${pkgs.gnupg}/bin/gpg2"; };
+    init = { defaultBranch = "main"; };
     push = { autoSetupRemote = true; };
     # TODO: improve this hack (if possible)
-    gpg = lib.mkForce { program = lib.mkForce "${pkgs.gnupg}/bin/gpg2"; };
     tag = {
       forceSignAnnotated = true;
       gpgSign = true;
     };
-    credential = { credentialStore = "gpg"; };
   };
 
   programs.git.signing = lib.mkForce {
@@ -135,11 +136,6 @@
   services.gpg-agent.pinentryFlavor = "curses";
   services.gpg-agent.maxCacheTtl = 7200;
   services.gpg-agent.sshKeys = [ "1EF33AD194BF3CADBC115F751CC2EACF4E075BAD" ];
-  # Improve usage of Magit with GPG commit signing.
-  services.gpg-agent.extraConfig = ''
-    allow-emacs-pinentry
-    allow-loopback-pinentry
-  '';
 
   home.activation = {
     getDoomEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
