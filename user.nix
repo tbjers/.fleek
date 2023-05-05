@@ -10,6 +10,7 @@
   # You know why this is here, yes, YOU.
   home.shellAliases = { vim = "nvim"; };
 
+  # Use custom dircolors from Nord Theme.
   # Please see: https://www.nordtheme.com/docs/ports/dircolors/installation
   programs.dircolors.enable = false;
   home.file.dir_colors = {
