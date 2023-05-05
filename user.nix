@@ -135,8 +135,10 @@
   services.gpg-agent.pinentryFlavor = "curses";
   services.gpg-agent.maxCacheTtl = 7200;
   services.gpg-agent.sshKeys = [ "1EF33AD194BF3CADBC115F751CC2EACF4E075BAD" ];
+  # Improve usage of Magit with GPG commit signing.
   services.gpg-agent.extraConfig = ''
     allow-emacs-pinentry
+    allow-loopback-pinentry
   '';
 
   home.activation = {
