@@ -13,8 +13,8 @@
     programs.starship.enable = true;
 
   # User specified programs 
-    programs.dircolors.enable = true; 
     programs.emacs.enable = true; 
-    programs.gpg.enable = true;
+    programs.gpg.enable = true; 
+    programs.navi.enable = true;
 
 }

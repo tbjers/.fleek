@@ -7,6 +7,22 @@
     EDITOR = "nano";
   };
 
+  # You know why this is here, yes, YOU.
+  home.shellAliases = { vim = "nvim"; };
+
+  # Please see: https://www.nordtheme.com/docs/ports/dircolors/installation
+  programs.dircolors.enable = false;
+  home.file.dir_colors = {
+    enable = true;
+    target = ".dir_colors";
+    text = builtins.readFile (pkgs.fetchFromGitHub {
+      owner = "nordtheme";
+      repo = "dircolors";
+      rev = "2f5b939274d6a8e99a5c94fac0e57a100dc323c7";
+      sha256 = "sha256-2t+ETXqqidEqs0uvR/MNZlMqVJErEiBGADVujDplvpU=";
+    } + "/src/dir_colors");
+  };
+
   programs.bash.enable = true;
   programs.bash.enableCompletion = true;
   programs.bash.bashrcExtra = ''
@@ -104,6 +120,12 @@
     throw-keyids = true;
   };
 
+  programs.navi = {
+    enable = true;
+    enableBashIntegration = true;
+    settings = { cheats = { paths = [ "~/Documents/Cheats" ]; }; };
+  };
+
   services.gpg-agent.enable = true;
   services.gpg-agent.verbose = true;
   services.gpg-agent.enableExtraSocket = true;
@@ -112,9 +134,9 @@
   services.gpg-agent.pinentryFlavor = "curses";
   services.gpg-agent.maxCacheTtl = 7200;
   services.gpg-agent.sshKeys = [ "1EF33AD194BF3CADBC115F751CC2EACF4E075BAD" ];
-
-  # You know why this is here, yes, YOU.
-  home.shellAliases = { vim = "nvim"; };
+  services.gpg-agent.extraConfig = ''
+    allow-emacs-pinentry
+  '';
 
   home.activation = {
     getDoomEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

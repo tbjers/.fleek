@@ -37,9 +37,9 @@ paths:
     - $HOME/.config/emacs/bin
     - $HOME/.asdf/shims
 programs:
-    - dircolors
     - emacs
     - gpg
+    - navi
 shell: bash
 systems:
     - arch: x86_64
