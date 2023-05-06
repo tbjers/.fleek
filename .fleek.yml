@@ -1,6 +1,6 @@
 aliases:
-    catp: bat -P
     cat: bat
+    catp: bat -P
     cz: chezmoi
     czg: chezmoi git
     db: distrobox
@@ -44,6 +44,8 @@ packages:
     - tldr
     - xclip
     - yq
+    - opensc
+    - pcsclite
 paths:
     - $HOME/bin
     - $HOME/.local/bin

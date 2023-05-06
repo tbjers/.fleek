@@ -43,6 +43,8 @@
     pkgs.tldr
     pkgs.xclip
     pkgs.yq
+    pkgs.opensc
+    pkgs.pcsclite
     # Fleek Bling
     pkgs.git
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
