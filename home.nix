@@ -19,32 +19,32 @@
   # programs are installed and configuration applied to dotfiles
   home.packages = [
     # user selected packages
+    pkgs.asdf-vm
+    pkgs.btop
     pkgs.cascadia-code
+    pkgs.cheat
     pkgs.chezmoi
     pkgs.fd
+    pkgs.fzf
+    pkgs.git
+    pkgs.github-cli
+    pkgs.htop
+    pkgs.jq
+    pkgs.kubectl
     pkgs.mc
+    pkgs.neofetch
+    pkgs.neovim
     pkgs.nixfmt
     pkgs.nodejs-18_x
     pkgs.pre-commit
     pkgs.python3
     pkgs.ranger
-    pkgs.asdf-vm
+    pkgs.ripgrep
+    pkgs.tldr
     pkgs.xclip
+    pkgs.yq
     # Fleek Bling
     pkgs.git
-    pkgs.htop
-    pkgs.github-cli
-    pkgs.glab
-    pkgs.fzf
-    pkgs.ripgrep
-    pkgs.vscode
-    pkgs.lazygit
-    pkgs.jq
-    pkgs.yq
-    pkgs.neovim
-    pkgs.neofetch
-    pkgs.btop
-    pkgs.cheat
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
   fonts.fontconfig.enable = true; 

@@ -19,6 +19,10 @@ $ apply-$(hostname)
 ```
 
 Your actual aliases are listed below:
+    cat = "bat";
+
+    catp = "bat -P";
+
     cz = "chezmoi";
 
     czg = "chezmoi git";

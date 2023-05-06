@@ -33,6 +33,8 @@
     . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
   '';
 
+  programs.bat.config = { theme = "TwoDark"; };
+
   # For information about available direnv options,
   # please see: https://direnv.net/man/direnv.toml.1.html
   programs.direnv.enable = true;
@@ -42,6 +44,9 @@
   programs.direnv.config.global.warn_timeout = "400ms";
 
   programs.emacs.package = pkgs.emacs28-nox;
+
+  programs.exa.enableAliases = true;
+  programs.exa.extraOptions = [ "--group-directories-first" "--header" ];
 
   programs.gh.enable = true;
   programs.gh.enableGitCredentialHelper = true;
@@ -124,7 +129,15 @@
   programs.navi = {
     enable = true;
     enableBashIntegration = true;
-    settings = { cheats = { paths = [ "~/Documents/Cheats" ]; }; };
+    settings = {
+      finder = {
+        command = "fzf";
+        overrides = lib.concatStringsSep " " [
+          "--color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C"
+          "--color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B"
+        ];
+      };
+    };
   };
 
   services.gpg-agent.enable = true;

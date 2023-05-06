@@ -1,4 +1,6 @@
 aliases:
+    catp: bat -P
+    cat: bat
     cz: chezmoi
     czg: chezmoi git
     db: distrobox
@@ -6,7 +8,7 @@ aliases:
     g: git
     nah: git reset --hard; git clean -df;
     tf: terraform
-bling: high
+bling: none
 ejected: false
 flakedir: .local/share/fleek
 git:
@@ -18,25 +20,44 @@ min_version: 0.8.4
 name: Fleek Configuration
 overlays: {}
 packages:
+    - asdf-vm
+    - btop
     - cascadia-code
+    - cheat
     - chezmoi
     - fd
+    - fzf
+    - git
+    - github-cli
+    - htop
+    - jq
+    - kubectl
     - mc
+    - neofetch
+    - neovim
     - nixfmt
     - nodejs-18_x
     - pre-commit
     - python3
     - ranger
-    - asdf-vm
+    - ripgrep
+    - tldr
     - xclip
+    - yq
 paths:
     - $HOME/bin
     - $HOME/.local/bin
     - $HOME/.config/emacs/bin
 programs:
+    - atuin
+    - bat
+    - direnv
     - emacs
+    - exa
     - gpg
     - navi
+    - starship
+    - zoxide
 shell: bash
 systems:
     - arch: x86_64

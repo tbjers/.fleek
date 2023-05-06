@@ -1,6 +1,10 @@
 { pkgs, misc, ... }: {
   # DO NOT EDIT: This file is managed by fleek. Manual changes will be overwritten.
    home.shellAliases = {
+    cat = "bat";
+    
+    catp = "bat -P";
+    
     cz = "chezmoi";
     
     czg = "chezmoi git";
@@ -14,11 +18,5 @@
     nah = "git reset --hard; git clean -df;";
     
     tf = "terraform";
-    
-    # bat --plain for unformatted cat
-    catp = "bat -P";
-    
-    # replace cat with bat
-    cat = "bat";
     };
 }

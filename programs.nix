@@ -4,17 +4,17 @@
   # programs are installed and configuration applied to dotfiles
   # add your personalized program configuration in ./user.nix   
 
-  # Bling supplied programs 
-    programs.exa.enable = true; 
-    programs.bat.enable = true; 
-    programs.atuin.enable = true; 
-    programs.zoxide.enable = true; 
-    programs.direnv.enable = true; 
-    programs.starship.enable = true;
+  # Bling supplied programs
 
   # User specified programs 
+    programs.atuin.enable = true; 
+    programs.bat.enable = true; 
+    programs.direnv.enable = true; 
     programs.emacs.enable = true; 
+    programs.exa.enable = true; 
     programs.gpg.enable = true; 
-    programs.navi.enable = true;
+    programs.navi.enable = true; 
+    programs.starship.enable = true; 
+    programs.zoxide.enable = true;
 
 }
