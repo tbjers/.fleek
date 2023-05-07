@@ -4,7 +4,7 @@
 
   home.sessionVariables = {
     FLEEK_MANAGED = "1";
-    EDITOR = "nano";
+    EDITOR = "emacs";
   };
 
   # You know why this is here, yes, YOU.
@@ -31,6 +31,14 @@
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
     . ${pkgs.asdf-vm}/share/bash-completion/completions/asdf.bash
     . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
+    if [ -d ~/.bashrc.d ]; then
+      for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+          . "$rc"
+        fi
+      done
+    fi
+    unset rc
   '';
 
   programs.bat.config = { theme = "TwoDark"; };
@@ -48,83 +56,88 @@
   programs.exa.enableAliases = true;
   programs.exa.extraOptions = [ "--group-directories-first" "--header" ];
 
-  programs.gh.enable = true;
-  programs.gh.enableGitCredentialHelper = true;
-  programs.gh.settings.git_protocol = "ssh";
+  programs.gh.enable = lib.mkForce false;
+  # programs.gh.enable = true;
+  # programs.gh.enableGitCredentialHelper = true;
+  # programs.gh.settings.editor = "emacs";
+  # programs.gh.settings.git_protocol = "ssh";
 
-  programs.git.enable = true;
+  programs.git.enable = lib.mkForce false;
 
-  programs.git.aliases = {
-    br = "branch";
-    ci = "commit";
-    co = "checkout";
-    pu = "pull";
-    pul = "pull";
-    pus = "push";
-    rb = "rebase";
-    rbc = "rebase --continue";
-    rbs = "rebase --skip";
-    st = "status -s";
-    push-all = "push --follow-tags";
-    pa = "push-all";
+  # programs.git.enable = true;
+  #
+  # programs.git.aliases = {
+  #   br = "branch";
+  #   ci = "commit";
+  #   co = "checkout";
+  #   pu = "pull";
+  #   pul = "pull";
+  #   pus = "push";
+  #   rb = "rebase";
+  #   rbc = "rebase --continue";
+  #   rbs = "rebase --skip";
+  #   st = "status -s";
+  #   push-all = "push --follow-tags";
+  #   pa = "push-all";
+  #
+  #   lg =
+  #     "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+  #   merge-ours = "!git checkout --ours   . && git add -u && git commit";
+  #   merge-theirs = "!git checkout --theirs . && git add -u && git commit";
+  #   patch = "!git --no-pager diff --no-color";
+  #   stage = "add";
+  #   staged = "diff --staged";
+  #   sync =
+  #     "!sh -c 'git pull && git diff --quiet HEAD || (git commit $1 && git push)' -";
+  #   tags = "tag -l";
+  #   undo = "reset --soft HEAD^";
+  #   unstage = "reset HEAD";
+  #   unstaged = "diff";
+  #   who = "shortlog -s --";
+  # };
+  #
+  # programs.git.diff-so-fancy.enable = true;
+  # programs.git.diff-so-fancy.pagerOpts = [ "--tabs=4" "-RFX" ];
+  #
+  # programs.git.extraConfig = {
+  #   advice = { detachedHead = false; };
+  #   commit = { gpgSign = true; };
+  #   credential = { credentialStore = "gpg"; };
+  #   diff = { gpg = { textconv = "gpg --no-tty --decrypt"; }; };
+  #   gpg = lib.mkForce { program = lib.mkForce "${pkgs.gnupg}/bin/gpg2"; };
+  #   init = { defaultBranch = "main"; };
+  #   push = { autoSetupRemote = true; };
+  #   tag = {
+  #     forceSignAnnotated = true;
+  #     gpgSign = true;
+  #   };
+  # };
 
-    lg =
-      "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
-    merge-ours = "!git checkout --ours   . && git add -u && git commit";
-    merge-theirs = "!git checkout --theirs . && git add -u && git commit";
-    patch = "!git --no-pager diff --no-color";
-    stage = "add";
-    staged = "diff --staged";
-    sync =
-      "!sh -c 'git pull && git diff --quiet HEAD || (git commit $1 && git push)' -";
-    tags = "tag -l";
-    undo = "reset --soft HEAD^";
-    unstage = "reset HEAD";
-    unstaged = "diff";
-    who = "shortlog -s --";
-  };
+  # programs.git.signing = lib.mkForce {
+  #   key = "F189ABC3C4117523";
+  #   gpgPath = "${pkgs.gnupg}/bin/gpg2";
+  #   signByDefault = true;
+  # };
 
-  programs.git.diff-so-fancy.enable = true;
-  programs.git.diff-so-fancy.pagerOpts = [ "--tabs=4" "-RFX" ];
-
-  programs.git.extraConfig = {
-    advice = { detachedHead = false; };
-    commit = { gpgSign = true; };
-    credential = { credentialStore = "gpg"; };
-    diff = { gpg = { textconv = "gpg --no-tty --decrypt"; }; };
-    gpg = lib.mkForce { program = lib.mkForce "${pkgs.gnupg}/bin/gpg2"; };
-    init = { defaultBranch = "main"; };
-    push = { autoSetupRemote = true; };
-    tag = {
-      forceSignAnnotated = true;
-      gpgSign = true;
-    };
-  };
-
-  programs.git.signing = lib.mkForce {
-    key = "F189ABC3C4117523";
-    gpgPath = "${pkgs.gnupg}/bin/gpg2";
-    signByDefault = true;
-  };
-
-  programs.gpg.homedir = "${config.home.homeDirectory}/.gnupg";
-  programs.gpg.mutableKeys = true;
-  programs.gpg.mutableTrust = true;
-  programs.gpg.settings = {
-    keyid-format = "0xlong";
-    keyserver = "hkps://keyserver.ubuntu.com:443";
-    personal-compress-preferences = "ZLIB BZIP2 ZIP Uncompressed";
-    charset = "utf-8";
-    no-comments = true;
-    no-emit-version = true;
-    no-greeting = true;
-    list-options = "show-uid-validity";
-    with-fingerprint = true;
-    require-cross-certification = true;
-    no-symkey-cache = true;
-    use-agent = true;
-    throw-keyids = true;
-  };
+  programs.gpg.enable = false;
+  # programs.gpg.homedir = "${config.home.homeDirectory}/.gnupg";
+  # programs.gpg.mutableKeys = true;
+  # programs.gpg.mutableTrust = true;
+  # programs.gpg.settings = {
+  #   keyid-format = "0xlong";
+  #   keyserver = "hkps://keyserver.ubuntu.com:443";
+  #   personal-compress-preferences = "ZLIB BZIP2 ZIP Uncompressed";
+  #   charset = "utf-8";
+  #   no-comments = true;
+  #   no-emit-version = true;
+  #   no-greeting = true;
+  #   list-options = "show-uid-validity";
+  #   with-fingerprint = true;
+  #   require-cross-certification = true;
+  #   no-symkey-cache = true;
+  #   use-agent = true;
+  #   throw-keyids = true;
+  # };
 
   programs.navi = {
     enable = true;
@@ -140,16 +153,17 @@
     };
   };
 
-  services.gpg-agent.enable = true;
-  services.gpg-agent.verbose = true;
-  services.gpg-agent.enableExtraSocket = true;
-  services.gpg-agent.enableScDaemon = true;
-  services.gpg-agent.enableSshSupport = true;
-  services.gpg-agent.grabKeyboardAndMouse = true;
-  services.gpg-agent.defaultCacheTtl = 3600;
-  services.gpg-agent.pinentryFlavor = "curses";
-  services.gpg-agent.maxCacheTtl = 7200;
-  services.gpg-agent.sshKeys = [ "1EF33AD194BF3CADBC115F751CC2EACF4E075BAD" ];
+  services.gpg-agent.enable = false;
+  # services.gpg-agent.enable = true;
+  # services.gpg-agent.verbose = true;
+  # services.gpg-agent.enableExtraSocket = true;
+  # services.gpg-agent.enableScDaemon = true;
+  # services.gpg-agent.enableSshSupport = true;
+  # services.gpg-agent.grabKeyboardAndMouse = true;
+  # services.gpg-agent.defaultCacheTtl = 3600;
+  # services.gpg-agent.pinentryFlavor = "curses";
+  # services.gpg-agent.maxCacheTtl = 7200;
+  # services.gpg-agent.sshKeys = [ "1EF33AD194BF3CADBC115F751CC2EACF4E075BAD" ];
 
   home.activation = {
     getDoomEmacs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

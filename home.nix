@@ -19,6 +19,7 @@
   # programs are installed and configuration applied to dotfiles
   home.packages = [
     # user selected packages
+    pkgs._1password
     pkgs.asdf-vm
     pkgs.btop
     pkgs.cascadia-code
@@ -43,8 +44,7 @@
     pkgs.tldr
     pkgs.xclip
     pkgs.yq
-    pkgs.opensc
-    pkgs.pcsclite
+    pkgs.diff-so-fancy
     # Fleek Bling
     pkgs.git
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })

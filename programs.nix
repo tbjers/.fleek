@@ -12,7 +12,6 @@
     programs.direnv.enable = true; 
     programs.emacs.enable = true; 
     programs.exa.enable = true; 
-    programs.gpg.enable = true; 
     programs.navi.enable = true; 
     programs.starship.enable = true; 
     programs.zoxide.enable = true;

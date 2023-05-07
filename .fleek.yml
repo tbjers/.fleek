@@ -20,11 +20,13 @@ min_version: 0.8.4
 name: Fleek Configuration
 overlays: {}
 packages:
+    - _1password
     - asdf-vm
     - btop
     - cascadia-code
     - cheat
     - chezmoi
+    - diff-so-fancy
     - fd
     - fzf
     - git
@@ -44,8 +46,6 @@ packages:
     - tldr
     - xclip
     - yq
-    - opensc
-    - pcsclite
 paths:
     - $HOME/bin
     - $HOME/.local/bin
@@ -56,7 +56,6 @@ programs:
     - direnv
     - emacs
     - exa
-    - gpg
     - navi
     - starship
     - zoxide
