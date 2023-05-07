@@ -43,6 +43,7 @@ packages:
     - python3
     - ranger
     - ripgrep
+    - ruby
     - tldr
     - xclip
     - yq

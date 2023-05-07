@@ -42,6 +42,7 @@
     pkgs.python3
     pkgs.ranger
     pkgs.ripgrep
+    pkgs.ruby
     pkgs.tldr
     pkgs.xclip
     pkgs.yq
