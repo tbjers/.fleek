@@ -10,6 +10,16 @@
   # You know why this is here, yes, YOU.
   home.shellAliases = { vim = "nvim"; };
 
+  programs.atuin.enable = true;
+  programs.atuin.enableBashIntegration = true;
+  programs.atuin.flags = [ "--disable-up-arrow" ];
+  programs.atuin.settings = {
+    style = "compact";
+    inline_height = 15;
+    history_filter =
+      [ "OP_CONNECT_TOKEN" "OP_CONNECT_HOST" "GITGUARDIAN_API_KEY" ];
+  };
+
   # Use custom dircolors from Nord Theme.
   # Please see: https://www.nordtheme.com/docs/ports/dircolors/installation
   programs.dircolors.enable = false;

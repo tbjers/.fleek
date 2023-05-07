@@ -25,6 +25,7 @@
     pkgs.cascadia-code
     pkgs.cheat
     pkgs.chezmoi
+    pkgs.diff-so-fancy
     pkgs.fd
     pkgs.fzf
     pkgs.git
@@ -44,7 +45,6 @@
     pkgs.tldr
     pkgs.xclip
     pkgs.yq
-    pkgs.diff-so-fancy
     # Fleek Bling
     pkgs.git
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
